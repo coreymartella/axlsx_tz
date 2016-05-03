@@ -1,0 +1,8 @@
+xlsx_package.use_shared_strings = true
+wb = xlsx_package.workbook
+
+time_format = "%Y-%m-%d %H:%M:%S"
+time_style = wb.styles.add_style format_code: "yyyy-mm-dd hh:mm:ss"
+wb.add_worksheet(name: "tz test") do |sheet|
+  sheet.add_row @time
+end
