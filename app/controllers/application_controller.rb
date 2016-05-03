@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   around_filter :set_time_zone
 
-  def tz
-    @time = Time.zone.now
-  end
   protected
     def set_time_zone
       Time.use_zone("America/Toronto"){yield}
